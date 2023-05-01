@@ -2,15 +2,13 @@ import React from 'react';
 import Lottie from "lottie-react";
 import authAnimation from "../assets/auth-animation.json";
 import { FaGithub, FaGoogle } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
         <div className="hero min-h-[70vh] max-w-screen-lg mx-auto">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
-                    {/* <h1 className="text-5xl font-bold">Login now!</h1>
-                    <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p> */}
-
                     <div className="w-3/5 ml-auto">
                         <Lottie animationData={authAnimation} loop={true} />
                     </div>
@@ -29,13 +27,15 @@ const Login = () => {
                                 <span className="label-text">Password</span>
                             </label>
                             <input type="text" placeholder="password" className="input input-bordered" />
-                            <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                            </label>
                         </div>
-                        <button className="btn btn-primary btn-outline capitalize btn-sm"><FaGoogle className='mr-2'/> login with google</button>
+
+                        <button className="btn mt-3 btn-primary btn-outline capitalize btn-sm"><FaGoogle className='mr-2'/> login with google</button>
                         <button className="btn btn-primary btn-outline capitalize btn-sm"><FaGithub className='mr-2'/> login with github</button>
-                        <div className="form-control mt-6">
+                        
+                            <label className="label">
+                                <span> Don't have an account? <Link to='/register' className="link text-info link-hover"> Register Here </Link></span>
+                            </label>
+                        <div className="form-control mt-3">
                             <button className="btn btn-accent">Login</button>
                         </div>
                     </form>
