@@ -17,7 +17,7 @@ const Navbar = () => {
                         <li><Link to='/'>Blog</Link></li>
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-accent text-xl">Satisfaction Recipe</a>
+                <a className="btn btn-ghost text-primary text-xl">Satisfaction Recipe</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -34,6 +34,7 @@ const Navbar = () => {
                         </div>
                     </label>
                 </div>
+                <Link to='/login' className="btn btn-sm btn-primary mr-2">Login</Link>
                 <button className="btn btn-sm btn-error">Logout</button>
             </div>
         </div>
