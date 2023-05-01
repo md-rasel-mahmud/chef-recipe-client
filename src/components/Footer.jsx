@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer className="footer footer-center fixed bottom-0 p-5 bg-base-200 gap-5 text-base-content rounded">
+        <footer className="footer footer-center p-5 bg-base-200 gap-5 text-base-content rounded">
             <div className="grid grid-flow-col gap-4">
                 <Link to='/'>Home</Link>
                 <Link to='/recipe'>Recipe</Link>

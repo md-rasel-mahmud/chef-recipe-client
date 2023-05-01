@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
-        <div className="hero min-h-[70vh] max-w-screen-lg mx-auto">
+        <div className="hero min-h-screen max-w-screen-lg mx-auto">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
                     <div className="w-3/5 ml-auto">

@@ -1,13 +1,11 @@
 import React from 'react';
 import Lottie from "lottie-react";
 import authAnimation from "../assets/auth-animation.json";
-import { FaGithub, FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 
 
 const Register = () => {
     return (
-        <div className="hero min-h-[70vh] max-w-screen-lg mx-auto">
+        <div className="hero min-h-screen max-w-screen-lg mx-auto">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
                     <div className="w-3/5 ml-auto">
