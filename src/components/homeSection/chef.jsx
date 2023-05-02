@@ -6,7 +6,7 @@ const Chef = ({ chef }) => {
     return (
         <div className="card bg-base-200 shadow-xl">
             <figure className='p-3'><img className='rounded-xl' src={picture} alt="chef image" /></figure>
-            <div className="card-body px-3 gap-4">
+            <div className="card-body p-3 gap-4">
                 <h2 className="card-title text-accent">{name}</h2>
                 <div className="badge badge-secondary"><FaThumbsUp className='mr-1 ' /> {likes}</div>
                 <div className="card-actions justify-start">
