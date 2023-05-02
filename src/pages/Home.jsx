@@ -1,6 +1,7 @@
 import React from 'react';
 import Lottie from "lottie-react";
 import foodAnimation from '../assets/food-animation.json'
+import { FaArrowRight } from 'react-icons/fa'
 
 const Home = () => {
     return (
@@ -9,8 +10,8 @@ const Home = () => {
                 <Lottie animationData={foodAnimation} loop={true} />
                 <div className='lg:w-1/2'>
                     <h1 className="text-5xl font-bold">Satisfaction Recipe!</h1>
-                    <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                    <button className="btn btn-info">Get Started</button>
+                    <p className="py-6">A satisfaction recipe is a meal that leaves you feeling full and content. It includes a balance of flavors, proteins, complex carbohydrates, healthy fats, and fiber-rich ingredients. Examples include soups, roasted vegetables, and stir-fries.</p>
+                    <button className="btn btn-accent">Get Started <FaArrowRight className='ml-2'/> </button>
                 </div>
             </div>
         </div>

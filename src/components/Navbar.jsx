@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaUserAlt } from 'react-icons/fa'
 import { CgMenuLeftAlt } from 'react-icons/cg'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../providers/AuthProvider';
+
+
 
 const Navbar = () => {
+    // import user context 
+    const {user} = useContext(AuthContext)
+    
     return (
         <div className="navbar bg-base-100 shadow-md mb-5">
             <div className="navbar-start">
@@ -27,9 +33,9 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <div className="dropdown dropdown-end">
-                    <label className="btn btn-ghost btn-circle avatar">
-                        <div className="text-2xl rounded-full">
+                <div className="dropdown dropdown-end tooltip tooltip-bottom" data-tip={user.email}>
+                    <label className="btn btn-ghost btn-circle avatar " >
+                        <div className="text-2xl rounded-full" >
                             <FaUserAlt />
                         </div>
                     </label>
