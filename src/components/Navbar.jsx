@@ -8,8 +8,8 @@ import { AuthContext } from '../providers/AuthProvider';
 
 const Navbar = () => {
     // import user context 
-    const {user} = useContext(AuthContext)
-    
+    const { user } = useContext(AuthContext)
+
     return (
         <div className="navbar bg-base-100 shadow-md mb-5">
             <div className="navbar-start">
@@ -33,15 +33,21 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <div className="dropdown dropdown-end tooltip tooltip-bottom" data-tip={user.email}>
-                    <label className="btn btn-ghost btn-circle avatar " >
-                        <div className="text-2xl rounded-full" >
-                            <FaUserAlt />
+                {user ?
+                    <>
+                        <div className="dropdown dropdown-end tooltip tooltip-bottom" data-tip={user.email}>
+                            <label className="btn btn-ghost btn-circle avatar " >
+                                <div className="text-2xl rounded-full" >
+                                    <FaUserAlt />
+                                </div>
+                            </label>
                         </div>
-                    </label>
-                </div>
-                <Link to='/login' className="btn btn-sm btn-primary mr-2">Login</Link>
-                <button className="btn btn-sm btn-error">Logout</button>
+                        <button className="btn btn-sm btn-error">Logout</button>
+                    </>
+                    :
+
+                    <Link to='/login' className="btn btn-sm btn-primary mr-2">Login</Link>
+                }
             </div>
         </div>
     );

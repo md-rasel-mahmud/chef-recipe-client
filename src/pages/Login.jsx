@@ -9,16 +9,16 @@ const Login = () => {
 
     const [error, setError] = useState()
 
-    const {googlePopupLogin} = useContext(AuthContext)
+    const {googlePopupLogin, githubPopupLogin} = useContext(AuthContext)
 
     const handleLogin = (event) => {
         event.preventDefault()
+        setError('')
 
         const form = event.target;
 
         const email = form.email.value;
         const password = form.password.value;
-        setError('')
 
         if(!(email, password)){
             setError('Empty value')
@@ -30,7 +30,19 @@ const Login = () => {
     }
 
     const handleGooglePopupLogin = () => {
+        setError('')
+        
         googlePopupLogin()
+        .then((result) => {
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error => setError(error.message))
+    }
+    const handleGithubPopupLogin = () => {
+        setError('')
+
+        githubPopupLogin()
         .then((result) => {
             const user = result.user;
             console.log(user);
@@ -67,7 +79,7 @@ const Login = () => {
 
                         {/* one click login method  */}
                         <button type='button' onClick={handleGooglePopupLogin} className="btn mt-3 btn-primary btn-outline capitalize btn-sm"><FaGoogle className='mr-2'/> login with google</button>
-                        <button type='button' className="btn btn-primary btn-outline capitalize btn-sm"><FaGithub className='mr-2'/> login with github</button>
+                        <button type='button' onClick={handleGithubPopupLogin} className="btn btn-primary btn-outline capitalize btn-sm"><FaGithub className='mr-2'/> login with github</button>
                         
                         <label className="label">
                             <span> Don't have an account? <Link to='/register' className="link text-info link-hover"> Register Here </Link></span>
