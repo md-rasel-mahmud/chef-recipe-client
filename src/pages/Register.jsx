@@ -10,7 +10,7 @@ const Register = () => {
     const [error, setError] = useState()
 
     // import context 
-    const {registerWithEmailPass} = useContext(AuthContext)
+    const {registerWithEmailPass, updateRegisterProfile} = useContext(AuthContext)
 
     const navigate = useNavigate()
 
@@ -43,10 +43,17 @@ const Register = () => {
         }
 
         registerWithEmailPass(email, password)
-        .then()
+        .then(() => {
+            updateRegisterProfile(name, photoUrl)
+            .then(() => {
+                navigate('/')
+            })
+            .catch(error => setError(error.message))
+            
+        })
         .catch(error => setError(error.message))
+        
 
-        navigate('/')
 
     }
 

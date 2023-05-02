@@ -35,10 +35,14 @@ const Navbar = () => {
             <div className="navbar-end">
                 {user ?
                     <>
-                        <div className="dropdown dropdown-end tooltip tooltip-bottom" data-tip={user.email}>
-                            <label className="btn btn-ghost btn-circle avatar " >
+                        <div className="dropdown dropdown-end tooltip tooltip-bottom" data-tip={user && user.displayName}>
+                            <label className="btn btn-ghost mr-2 btn-circle avatar " >
                                 <div className="text-2xl rounded-full" >
-                                    <FaUserAlt />
+                                    {
+                                        user.photoURL ? <img src={user.photoURL} alt="profile pic" />
+                                        :
+                                        <FaUserAlt />
+                                    }
                                 </div>
                             </label>
                         </div>
