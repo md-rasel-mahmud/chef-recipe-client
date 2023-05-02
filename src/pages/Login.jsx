@@ -2,14 +2,17 @@ import React, { useContext, useState } from 'react';
 import Lottie from "lottie-react";
 import authAnimation from "../assets/auth-animation.json";
 import { FaGithub, FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 
 const Login = () => {
 
     const [error, setError] = useState()
 
-    const {googlePopupLogin, githubPopupLogin} = useContext(AuthContext)
+    // import context 
+    const {googlePopupLogin, githubPopupLogin} = useContext(AuthContext);
+
+    const navigate = useNavigate()
 
     const handleLogin = (event) => {
         event.preventDefault()
@@ -31,14 +34,17 @@ const Login = () => {
 
     const handleGooglePopupLogin = () => {
         setError('')
-        
+
         googlePopupLogin()
         .then((result) => {
             const user = result.user;
             console.log(user);
+            navigate('/')
         })
         .catch(error => setError(error.message))
+
     }
+
     const handleGithubPopupLogin = () => {
         setError('')
 
@@ -46,8 +52,10 @@ const Login = () => {
         .then((result) => {
             const user = result.user;
             console.log(user);
+            navigate('/')
         })
         .catch(error => setError(error.message))
+        
     }
 
     return (

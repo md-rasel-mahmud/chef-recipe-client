@@ -1,15 +1,23 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Lottie from "lottie-react";
 import authAnimation from "../assets/auth-animation.json";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../providers/AuthProvider';
 
 
 const Register = () => {
 
     const [error, setError] = useState()
 
+    // import context 
+    const {registerWithEmailPass} = useContext(AuthContext)
+
+    const navigate = useNavigate()
+
     const handleRegisterSubmit = (event) => {
         event.preventDefault()
+        
+        setError('')
 
         const form = event.target;
 
@@ -19,14 +27,27 @@ const Register = () => {
         const password = form.password.value;
         const confirmPassword = form.confirmPassword.value;
 
-        setError('')
 
-        if(!(name,email,photoUrl, password,confirmPassword)){
+        if(!(name,email, password,confirmPassword)){
             setError('Empty value')
             return;
         }
+        if(password !== confirmPassword){
+            setError('Password doesn\'t match')
+            return;
+        }
 
-        console.log(name, email, password, photoUrl, password, confirmPassword);
+        if(password < 6 && confirmPassword < 6){
+            setError('Password should be at list 6 character and more')
+            return;
+        }
+
+        registerWithEmailPass(email, password)
+        .then()
+        .catch(error => setError(error.message))
+
+        navigate('/')
+
     }
 
     return (
