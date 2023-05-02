@@ -10,7 +10,7 @@ const Login = () => {
     const [error, setError] = useState()
 
     // import context 
-    const {googlePopupLogin, githubPopupLogin} = useContext(AuthContext);
+    const {googlePopupLogin, githubPopupLogin, loginWithEmailPass} = useContext(AuthContext);
 
     const navigate = useNavigate()
 
@@ -28,7 +28,11 @@ const Login = () => {
             return;
         }
 
-        console.log(email, password);
+        loginWithEmailPass(email, password)
+        .then()
+        .catch(error => setError(error.message))
+        
+        navigate('/')
 
     }
 
