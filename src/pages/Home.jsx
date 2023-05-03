@@ -1,11 +1,24 @@
-import React from 'react';
+// import React from 'react';
 import Lottie from "lottie-react";
 import foodAnimation from '../assets/food-animation.json'
 import { FaArrowRight } from 'react-icons/fa'
 import { useLoaderData } from 'react-router-dom';
 import Chef from '../components/homeSection/Chef';
-
 import foodBg from '../assets/food-bg.jpg'
+
+import React, { useRef, useState } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
+
+
+// import required modules
+import { Pagination } from "swiper";
+
 
 const Home = () => {
 
@@ -35,8 +48,10 @@ const Home = () => {
                 </div>
 
                 <div className="divider max-w-screen-lg mx-auto"></div>
+
+
                 {/* Chefs section  */}
-                <div style={{ background: `url(${foodBg}), linear-gradient(red, transparent) `,  backgroundSize: 'cover', backgroundPosition: 'center center' }} className='min-h-screen my-10'>
+                <div style={{ background: `url(${foodBg})`, backgroundSize: 'cover', backgroundPosition: 'center center' }} className='min-h-screen my-10'>
                     <div className='min-h-screen flex items-center bg-gradient-to-b to-indigo-500/75 from-black/75 p-4 backdrop-blur-sm mx-auto'>
                         <div className='max-w-screen-lg mx-auto'>
                             <h2 className='text-center text-3xl my-5 text-primary  underline underline-offset-8'>Why our chef is best?</h2>
@@ -48,6 +63,44 @@ const Home = () => {
                                 All these elements come together to create a delicious and satisfying meal that is sure to please any pasta lover.</p>
                         </div>
                     </div>
+                </div>
+
+                <div className="divider max-w-screen-lg mx-auto"></div>
+
+                {/* Testimonial section  */}
+                <h2 className='text-center text-3xl text-primary underline underline-offset-8'>Testimonial</h2>
+
+                <div className="max-w-screen-lg mx-auto h-screen">
+
+                    <Swiper
+                        slidesPerView={3}
+                        spaceBetween={30}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        modules={[Pagination]}
+                        className="mySwiper"
+                    >
+
+                        {
+                            chefs.map(chef => <SwiperSlide key={chef.id}>
+                                <div className="flex h-screen mx-auto items-center">
+
+                                    <div className="card bg-base-100 shadow-xl">
+                                        <figure className="px-10 pt-10">
+                                            <img src={chef.picture} alt="Shoes" className="rounded-full w-24" />
+                                        </figure>
+                                        <div className="card-body items-center ">
+                                            <h2 className="card-title text-left text-accent">{chef.testimonial.authorName}</h2>
+                                            <p className="italic font-semibold text-gray-900 dark:text-white">"{chef.testimonial.comment}"</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </SwiperSlide>)
+                        }
+                    </Swiper>
+
+                    
                 </div>
             </main>
         </>
