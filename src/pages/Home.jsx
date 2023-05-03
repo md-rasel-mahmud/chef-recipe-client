@@ -23,7 +23,6 @@ import { Pagination } from "swiper";
 const Home = () => {
 
     const chefs = useLoaderData()
-    console.log(chefs);
 
     return (
         <>
@@ -41,7 +40,7 @@ const Home = () => {
                 <div className="divider max-w-screen-lg mx-auto"></div>
                 {/* Chefs section  */}
                 <h2 className='text-center text-3xl text-primary underline underline-offset-8'>Our chefs</h2>
-                <div className="grid grid-cols-3 gap-20 my-10 max-w-screen-lg mx-auto">
+                <div className="grid lg:grid-cols-3 gap-20 my-10 max-w-screen-lg mx-2 lg:mx-auto">
                     {
                         chefs.map(chef => <Chef key={chef.id} chef={chef} />)
                     }
@@ -50,7 +49,7 @@ const Home = () => {
                 <div className="divider max-w-screen-lg mx-auto"></div>
 
 
-                {/* Chefs section  */}
+                {/* why our chef is best section  */}
                 <div style={{ background: `url(${foodBg})`, backgroundSize: 'cover', backgroundPosition: 'center center' }} className='min-h-screen my-10'>
                     <div className='min-h-screen flex items-center bg-gradient-to-b to-indigo-500/75 from-black/75 p-4 backdrop-blur-sm mx-auto'>
                         <div className='max-w-screen-lg mx-auto'>
@@ -68,7 +67,7 @@ const Home = () => {
                 <div className="divider max-w-screen-lg mx-auto"></div>
 
                 {/* Testimonial section  */}
-                <h2 className='text-center text-3xl text-primary underline underline-offset-8'>Testimonial</h2>
+                <h2 className='text-center mt-24 text-3xl text-primary underline underline-offset-8'>Testimonial</h2>
 
                 <div className="max-w-screen-lg mx-auto h-screen">
 
@@ -83,16 +82,16 @@ const Home = () => {
                     >
 
                         {
-                            chefs.map(chef => <SwiperSlide key={chef.id}>
-                                <div className="flex h-screen mx-auto items-center">
+                            chefs.map(chef => <SwiperSlide  key={chef.id}>
+                                <div className="flex h-[75vh] mx-auto items-center">
 
-                                    <div className="card bg-base-100 shadow-xl">
+                                    <div className="card bg-base-200 shadow-xl">
                                         <figure className="px-10 pt-10">
                                             <img src={chef.picture} alt="Shoes" className="rounded-full w-24" />
                                         </figure>
-                                        <div className="card-body items-center ">
-                                            <h2 className="card-title text-left text-accent">{chef.testimonial.authorName}</h2>
-                                            <p className="italic font-semibold text-gray-900 dark:text-white">"{chef.testimonial.comment}"</p>
+                                        <div className="card-body">
+                                            <h2 className="card-title text-accent">{chef.testimonial.authorName}</h2>
+                                            <p className="border-l-2 pl-3 border-indigo-900 italic font-semibold text-gray-800 dark:text-gray-400">"{chef.testimonial.comment}"</p>
                                         </div>
                                     </div>
                                 </div>

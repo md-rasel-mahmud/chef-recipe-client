@@ -4,7 +4,7 @@ import SharedLayout from "../layouts/SharedLayout";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Blog from "../pages/Blog";
-import Recipe from "../pages/Recipe";
+import ChefRecipes from "../pages/ChefRecipes";
 
 
 const router = createBrowserRouter([
@@ -30,8 +30,9 @@ const router = createBrowserRouter([
                 element: <Blog/>
             },
             {
-                path: 'recipe',
-                element: <Recipe/>
+                path: 'chef-recipes/:id',
+                element: <ChefRecipes/>,
+                loader: ({params}) => fetch(`https://a-10-chef-recipe-server.vercel.app/single-chef/${params.id}`)
             }
         ]
     }

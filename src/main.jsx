@@ -4,6 +4,7 @@ import './index.css'
 import { RouterProvider } from 'react-router-dom';
 import router from './routes/Route';
 import AuthProvider from './providers/AuthProvider';
+import '@smastrom/react-rating/style.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
