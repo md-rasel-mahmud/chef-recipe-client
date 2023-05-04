@@ -6,7 +6,8 @@ export const AuthContext = createContext(null)
 
 const AuthProvider = ({children}) => {
 
-    const [user, setUser] = useState([])
+    const [user, setUser] = useState(null)
+    const [loader, setLoader] = useState(true)
 
     //auth
     const auth = getAuth(app)
@@ -39,13 +40,14 @@ const AuthProvider = ({children}) => {
         return signInWithPopup( auth, githubProvider)
     }
 
-    //login with enter email and password
-
 
     //on state change observer
     useEffect( () => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
+
+            // set spinner 
+            setLoader(false)
             console.log(currentUser);
         })
         return () => unsubscribe();
@@ -60,6 +62,7 @@ const AuthProvider = ({children}) => {
     // context send data 
     const authInfo = {
         user,
+        loader,
         googlePopupLogin,
         githubPopupLogin,
         registerWithEmailPass,
