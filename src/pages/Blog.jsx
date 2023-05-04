@@ -1,9 +1,17 @@
+import { PDFDownloadLink } from "@react-pdf/renderer";
 import React from "react";
+import PDFFile from "../components/PdfFile";
+import { FaCloudDownloadAlt } from "react-icons/fa";
 const Blog = () => {
   return (
     <>
       <div className="min-h-[75vh]">
         <h2 className="text-center my-5 text-3xl">Blog</h2>
+        <PDFDownloadLink className="flex flex-col justify-start my-10" document={<PDFFile />} filename="document">
+          <button className="btn btn-primary w-fit mx-auto">
+            Download PDF <FaCloudDownloadAlt className="text-xl ml-2 " />
+          </button>
+        </PDFDownloadLink>
         <div className="flex flex-col gap-4 max-w-screen-lg mx-auto">
           <div
             tabIndex={0}
