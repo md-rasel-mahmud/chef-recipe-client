@@ -9,6 +9,7 @@ import { BsHeart, BsHeartFill } from 'react-icons/bs'
 const ChefRecipes = () => {
 
     const [favBtn, setFavBtn] = useState(false)
+    const [like, setLike] = useState(false)
 
     // load data
     const singleChef = useLoaderData()
@@ -16,13 +17,28 @@ const ChefRecipes = () => {
     // Destructure data 
     const { name, bio, likes, picture, rating, recipe_list, recipes, experience } = singleChef;
 
-    // tost 
-    const notify = () => toast.success("The recipe is your favorite");
+    // tost favorite 
+    const favoriteToast = () => toast.success("The recipe is your favorite");
+    
+    // like added toast 
+    const likeAdded = () => toast.success('Like added')
 
+    // like remove toast 
+    const likeRemove = () => toast.warn('like Removed')
     // handle favorite button 
     const handleFavBtn = () => {
         setFavBtn(true)
-        notify()
+        favoriteToast()
+    }
+
+    //handle like
+    const handleLike = ()=>{
+        setLike(!like)
+        if (!like) {
+            likeAdded()
+        }else {
+            likeRemove()
+        }
     }
 
 
@@ -53,8 +69,10 @@ const ChefRecipes = () => {
                 <div className="card-body bg-base-300 p-3">
                     <h2 className="card-title text-accent">{name}</h2>
                     <div className="card-actions items-center bg-base-100 p-2 rounded-lg justify-center lg:justify-between">
-                        <div className='card-actions justify-center lg:justify-start'>
-                            <div className="badge badge-secondary"><FaThumbsUp className='mr-1' /> {likes}</div>
+                        <div className='card-actions items-center justify-center lg:justify-start'>
+
+                            <button onClick={handleLike} className={`btn btn-xs ${like ? 'btn-primary ' : 'btn-outline'} rounded-full`}><FaThumbsUp className='mr-1' /> {like ? likes+1 : likes}</button>
+
                             <div className="badge badge-outline">Number of Recipes : {recipes}</div>
                             <div className="badge badge-outline">{experience} Years of Experience</div>
                         </div>
@@ -70,7 +88,7 @@ const ChefRecipes = () => {
 
                     </div>
                     <div className="card-actions justify-start py-4">
-                        <Rating style={{ maxWidth: 100 }} value={rating} readOnly />
+                        <Rating style={{ maxWidth: 100 }} value={rating} readOnly /> {rating}
                     </div>
                     <p className='w-4/5'>{bio}</p>
                 </div>
