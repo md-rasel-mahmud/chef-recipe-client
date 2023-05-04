@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { FaUserAlt } from 'react-icons/fa'
 import { CgMenuLeftAlt } from 'react-icons/cg'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 
 
@@ -18,16 +18,16 @@ const Navbar = () => {
                         <CgMenuLeftAlt />
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        <li><Link to='/'>Home</Link></li>
-                        <li><Link to='/blog'>Blog</Link></li>
+                        <li><NavLink className={({isActive}) => isActive ? 'text-accent font-semibold underline underline-offset-8' : ''} to='/'>Home</NavLink></li>
+                        <li><NavLink className={({isActive}) => isActive ? 'text-accent font-semibold underline underline-offset-8' : ''} to='/blog'>Blog</NavLink></li>
                     </ul>
                 </div>
                 <a className="text-primary lg:uppercase lg:text-xl">Satisfaction Recipe</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    <li><Link to='/'>Home</Link></li>
-                    <li><Link to='/blog'>Blog</Link></li>
+                    <li><NavLink className={({isActive}) => isActive ? 'text-accent font-semibold underline underline-offset-8' : ''} to='/'>Home</NavLink></li>
+                    <li><NavLink className={({isActive}) => isActive ? 'text-accent font-semibold underline underline-offset-8' : ''} to='/blog'>Blog</NavLink></li>
                 </ul>
             </div>
             <div className="navbar-end">
@@ -49,7 +49,7 @@ const Navbar = () => {
 
                     :
 
-                    <Link to='/login' className="btn btn-sm btn-primary mr-2">Login</Link>
+                    <NavLink to='/login' className="btn btn-sm btn-primary mr-2">Login</NavLink>
                 }
             </div>
         </div>
