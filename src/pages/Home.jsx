@@ -17,6 +17,9 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import Spinner from "../components/Spinner";
 
+//import lazy load 
+import LazyLoad from "react-lazy-load";
+
 const Home = () => {
   const chefs = useLoaderData();
 
@@ -112,11 +115,13 @@ const Home = () => {
                 <div className="flex h-[75vh] mx-2 lg:mx-auto items-center">
                   <div className="card bg-base-200 shadow-xl">
                     <figure className="px-10 pt-10">
-                      <img
-                        src={chef.picture}
-                        alt="Shoes"
-                        className="rounded-full w-24"
-                      />
+                      <LazyLoad>
+                        <img
+                          src={chef.picture}
+                          alt="Shoes"
+                          className="rounded-full w-24"
+                        />
+                      </LazyLoad>
                     </figure>
                     <div className="card-body">
                       <h2 className="card-title text-accent">

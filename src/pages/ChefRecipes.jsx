@@ -5,6 +5,7 @@ import { useLoaderData } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 
 import { BsHeart, BsHeartFill } from "react-icons/bs";
+import Spinner from "../components/Spinner";
 
 const ChefRecipes = () => {
   // load data
@@ -59,7 +60,7 @@ const ChefRecipes = () => {
   return (
     <>
       {/* spinner */}
-      {spinner && <Spinner />}
+      {spinner && <Spinner/>}
       <div className="flex flex-col-reverse lg:flex-row gap-2 m-3 lg:h-[85vh] items-center">
         <div className="lg:w-72 w-full h-full rounded-lg bg-base-200 lg:overflow-y-auto">
           <h2 className="text-center text-accent mt-1 uppercase font-semibold text-2xl">
