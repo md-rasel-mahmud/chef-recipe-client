@@ -1,46 +1,4 @@
 import React from "react";
-import { Page, Text, View, Document, StyleSheet } from "@react-pdf/renderer";
-import ReactPDF from "@react-pdf/renderer";
-
-import ReactToPdf from "react-to-pdf";
-
-// Create styles
-const styles = StyleSheet.create({
-  page: {
-    flexDirection: "row",
-    backgroundColor: "#E4E4E4",
-  },
-  section: {
-    margin: 10,
-    padding: 10,
-    flexGrow: 1,
-  },
-});
-
-// Create Document Component
-const MyDocument = () => (
-  <Document>
-    <Page size="A4" style={styles.page}>
-      <View style={styles.section}>
-        <Text>
-          1. The differences between uncontrolled and controlled components.
-        </Text>
-      </View>
-      <View style={styles.section}>
-        <Text>2. How to validate React props using PropTypes</Text>
-      </View>
-      <View style={styles.section}>
-        <Text> 3. The difference between nodejs and express js.</Text>
-      </View>
-      <View style={styles.section}>
-        <Text>
-          4.What is a custom hook, and why will you create a custom hook?
-        </Text>
-      </View>
-    </Page>
-  </Document>
-);
-
 const Blog = () => {
   return (
     <>
@@ -123,18 +81,8 @@ const Blog = () => {
           </div>
         </div>
       </div>
-      <ReactToPdf>
-        {({ toPdf, targetRef }) => (
-          <div
-            style={{ width: 500, height: 500, background: "red" }}
-            onClick={toPdf}
-            ref={targetRef}
-          />
-        )}
-      </ReactToPdf>
     </>
   );
 };
 
-ReactPDF.render(<MyDocument />, `/example.pdf`);
 export default Blog;
