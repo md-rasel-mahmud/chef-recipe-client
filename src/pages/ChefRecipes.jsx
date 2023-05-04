@@ -17,7 +17,7 @@ const ChefRecipes = () => {
     const { name, bio, likes, picture, rating, recipe_list, recipes, experience } = singleChef;
 
     // tost 
-    const notify = () => toast.success("Recipe added in your Favorite list");
+    const notify = () => toast.success("The recipe is your favorite");
 
     // handle favorite button 
     const handleFavBtn = () => {
