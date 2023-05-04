@@ -5,6 +5,7 @@ import { useLoaderData } from "react-router-dom";
 import Chef from "../components/homeSection/Chef";
 import foodBg from "../assets/food-bg.jpg";
 
+
 import React, { useEffect, useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -25,10 +26,13 @@ const Home = () => {
 
   const [spinner, setSpinner] = useState(true);
 
+
   // stop spinner
   useEffect(() => {
     setSpinner(false);
   }, [chefs]);
+
+
 
   return (
     <>
@@ -54,7 +58,7 @@ const Home = () => {
         <h2 className="text-center text-3xl text-primary underline underline-offset-8">
           Our chefs
         </h2>
-        <div className="grid lg:grid-cols-3 gap-20 my-10 max-w-screen-lg mx-2 lg:mx-auto">
+        <div className="grid lg:grid-cols-3 gap-5 my-10 max-w-screen-lg mx-2 lg:mx-auto">
           {chefs.map((chef) => (
             <Chef key={chef.id} chef={chef} />
           ))}
@@ -121,9 +125,9 @@ const Home = () => {
                     <figure className="px-10 pt-10">
                       <LazyLoad>
                         <img
-                          src={chef.picture}
+                          src={chef.testimonial.authorImage}
                           alt="Shoes"
-                          className="rounded-full w-24"
+                          className="mask mask-circle w-24"
                         />
                       </LazyLoad>
                     </figure>
@@ -141,6 +145,7 @@ const Home = () => {
             ))}
           </Swiper>
         </div>
+
       </main>
     </>
   );

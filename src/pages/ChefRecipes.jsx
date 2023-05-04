@@ -84,7 +84,7 @@ const ChefRecipes = () => {
 
         <div className="card overflow-hidden flex-1 h-full bg-base-200 shadow-xl">
           <figure className="pl-3 lg:!justify-start">
-            <img src={picture} alt="Chef" className="h-52 my-2 rounded-full" />
+            <img src={picture} alt="Chef" className="h-52 my-2 rounded-full mask mask-circle" />
           </figure>
           <div className="card-body bg-base-300 p-3">
             <h2 className="card-title text-accent">{name}</h2>
@@ -93,7 +93,7 @@ const ChefRecipes = () => {
                 <button
                   onClick={handleLike}
                   className={`btn btn-xs ${
-                    like ? "btn-primary " : "btn-outline"
+                    like ? "btn-primary " : "btn-outline btn-primary"
                   } rounded-full`}
                 >
                   <FaThumbsUp className="mr-1" /> {like ? likes + 1 : likes}
