@@ -19,10 +19,10 @@ const Navbar = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><Link to='/'>Home</Link></li>
-                        <li><Link to='/'>Blog</Link></li>
+                        <li><Link to='/blog'>Blog</Link></li>
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-primary text-xl">Satisfaction Recipe</a>
+                <a className="text-primary lg:uppercase lg:text-xl">Satisfaction Recipe</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

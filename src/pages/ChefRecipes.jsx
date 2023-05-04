@@ -5,7 +5,6 @@ import { useLoaderData } from 'react-router-dom';
 
 const ChefRecipes = () => {
     const singleChef = useLoaderData()
-    console.log(singleChef);
     const { name, bio, likes, picture, rating, recipe_list, recipes, experience } = singleChef;
     return (
         <div className="flex flex-col-reverse lg:flex-row gap-2 m-3 lg:h-[85vh] items-center">

@@ -72,7 +72,7 @@ const Home = () => {
                 <div className="max-w-screen-lg mx-auto h-screen">
 
                     <Swiper
-                        slidesPerView={3}
+                        slidesPerView={1}
                         spaceBetween={30}
                         pagination={{
                             clickable: true,
@@ -83,7 +83,7 @@ const Home = () => {
 
                         {
                             chefs.map(chef => <SwiperSlide  key={chef.id}>
-                                <div className="flex h-[75vh] mx-auto items-center">
+                                <div className="flex h-[75vh] mx-2 lg:mx-auto items-center">
 
                                     <div className="card bg-base-200 shadow-xl">
                                         <figure className="px-10 pt-10">
