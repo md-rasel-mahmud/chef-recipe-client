@@ -5,7 +5,6 @@ import { useLoaderData } from "react-router-dom";
 import Chef from "../components/homeSection/Chef";
 import foodBg from "../assets/food-bg.jpg";
 
-
 import React, { useEffect, useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -26,18 +25,16 @@ const Home = () => {
 
   const [spinner, setSpinner] = useState(true);
 
-
   // stop spinner
   useEffect(() => {
     setSpinner(false);
   }, [chefs]);
 
 
-
   return (
     <>
-      {/* spinner */}
-      {spinner && <Spinner />}
+    {/* spinner  */}
+    {spinner && <Spinner/>}
       <header className="hero py-3">
         <div className="hero-content flex-col lg:flex-row-reverse max-w-screen-lg mx-auto">
           <Lottie animationData={foodAnimation} loop={true} />
@@ -145,7 +142,6 @@ const Home = () => {
             ))}
           </Swiper>
         </div>
-
       </main>
     </>
   );

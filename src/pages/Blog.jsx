@@ -7,11 +7,13 @@ const Blog = () => {
     <>
       <div className="min-h-[75vh]">
         <h2 className="text-center my-5 text-3xl">Blog</h2>
-        <PDFDownloadLink className="flex flex-col justify-start my-10" document={<PDFFile />} filename="document">
+        <div className="flex flex-col justify-start my-10">
           <button className="btn btn-primary w-fit mx-auto">
-            Download PDF <FaCloudDownloadAlt className="text-xl ml-2 " />
+            <PDFDownloadLink className="flex items-center"  fileName="Blog.pdf" document={<PDFFile />}>
+              Download PDF <FaCloudDownloadAlt className="text-xl ml-2 " />
+            </PDFDownloadLink>
           </button>
-        </PDFDownloadLink>
+        </div>
         <div className="flex flex-col gap-4 max-w-screen-lg mx-auto">
           <div
             tabIndex={0}

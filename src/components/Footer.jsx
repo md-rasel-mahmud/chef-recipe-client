@@ -8,7 +8,6 @@ const Footer = () => {
         <footer className="footer footer-center p-5 bg-base-200 gap-5 text-base-content rounded">
             <div className="grid grid-flow-col gap-4">
                 <Link to='/'>Home</Link>
-                <Link to='/recipe'>Recipe</Link>
                 <Link to='/blog'>Blog</Link>
             </div>
             <div>
@@ -19,7 +18,7 @@ const Footer = () => {
                 </div>
             </div>
             <div>
-                <p>Copyright © {moment().format('yyy')} - All right reserved by <span className='text-accent uppercase'>Satisfaction Recipe</span></p>
+                <p>Copyright © {moment().format('yyy')} - All right reserved by <a href='https://raselmahmud.site' target='_blank' className='text-accent uppercase'>Satisfaction Recipe</a></p>
             </div>
         </footer>
     );

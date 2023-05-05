@@ -2,9 +2,9 @@ import React from "react";
 
 const Spinner = () => {
   return (
-    <div className="h-screen w-full z-50 fixed backdrop-blur-sm flex justify-center items-center">
-      <button className="btn btn-xl btn-circle loading"></button>
-    </div>
+      <div className="min-h-screen w-full z-50 fixed backdrop-blur-lg flex justify-center items-center">
+        <button className="btn btn-lg btn-primary text-white btn-circle loading"></button>
+      </div>
   );
 };
 
