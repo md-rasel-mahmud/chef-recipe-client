@@ -3,7 +3,7 @@ import { Navigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import Spinner from "../components/Spinner";
 
-const PrivateRoute = ({ children }) => {
+const PrivetLayout = ({ children }) => {
   const { user, loader } = useContext(AuthContext);
 
   //   current location capture
@@ -20,4 +20,4 @@ const PrivateRoute = ({ children }) => {
   return <Navigate state={{ from: location }} to="/login" replace={true} />;
 };
 
-export default PrivateRoute;
+export default PrivetLayout;

@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 
-/* Example of how to fade our content in */
 
+/* Lazy load animation*/
 .LazyLoad {
-    opacity: 0;
-    transition: all 1s ease-in-out;
-  }
-  
-  .is-visible {
-    opacity: 1;
-  }
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.is-visible {
+  opacity: 1;
+}

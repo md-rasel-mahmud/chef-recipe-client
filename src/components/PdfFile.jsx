@@ -99,8 +99,10 @@ const PDFFile = () => {
           4.What is a custom hook, and why will you create a custom hook?
         </Text>
         <Text style={styles.paragraph}>
-        A custom hook is a reusable function in React that encapsulates some specific functionality using built-in hooks. You create a custom hook to make your code more modular, abstract away complex logic, and improve comparability.
-          and over again.
+          A custom hook is a reusable function in React that encapsulates some
+          specific functionality using built-in hooks. You create a custom hook
+          to make your code more modular, abstract away complex logic, and
+          improve comparability. and over again.
         </Text>
         <Text
           style={styles.pageNumber}

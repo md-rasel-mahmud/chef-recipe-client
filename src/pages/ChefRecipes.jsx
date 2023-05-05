@@ -60,7 +60,7 @@ const ChefRecipes = () => {
   return (
     <>
       {/* spinner */}
-      {spinner && <Spinner/>}
+      {spinner && <Spinner />}
       <div className="flex flex-col-reverse lg:flex-row gap-2 m-3 lg:h-[85vh] items-center">
         <div className="lg:w-72 w-full h-full rounded-lg bg-base-200 lg:overflow-y-auto">
           <h2 className="text-center text-accent mt-1 uppercase font-semibold text-2xl">
@@ -84,7 +84,11 @@ const ChefRecipes = () => {
 
         <div className="card overflow-hidden flex-1 h-full bg-base-200 shadow-xl">
           <figure className="pl-3 lg:!justify-start">
-            <img src={picture} alt="Chef" className="h-52 my-2 rounded-full mask mask-circle" />
+            <img
+              src={picture}
+              alt="Chef"
+              className="h-52 my-2 rounded-full mask mask-circle"
+            />
           </figure>
           <div className="card-body bg-base-300 p-3">
             <h2 className="card-title text-accent">{name}</h2>

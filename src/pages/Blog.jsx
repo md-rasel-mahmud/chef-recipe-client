@@ -9,7 +9,11 @@ const Blog = () => {
         <h2 className="text-center my-5 text-3xl">Blog</h2>
         <div className="flex flex-col justify-start my-10">
           <button className="btn btn-primary w-fit mx-auto">
-            <PDFDownloadLink className="flex items-center"  fileName="Blog.pdf" document={<PDFFile />}>
+            <PDFDownloadLink
+              className="flex items-center"
+              fileName="Blog.pdf"
+              document={<PDFFile />}
+            >
               Download PDF <FaCloudDownloadAlt className="text-xl ml-2 " />
             </PDFDownloadLink>
           </button>

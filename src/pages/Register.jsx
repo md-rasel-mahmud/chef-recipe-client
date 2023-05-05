@@ -55,7 +55,7 @@ const Register = () => {
     <div className="hero min-h-screen max-w-screen-lg mx-auto">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
-          <div className="w-3/5 ml-auto">
+          <div className="lg:w-3/5 ml-auto">
             <Lottie animationData={authAnimation} loop={true} />
           </div>
         </div>

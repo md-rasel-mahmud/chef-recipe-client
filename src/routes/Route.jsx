@@ -6,38 +6,44 @@ import Register from "../pages/Register";
 import Blog from "../pages/Blog";
 import ChefRecipes from "../pages/ChefRecipes";
 import ErrorPage from "../pages/ErrorPage";
-import PrivateRoute from "../PrivateRoute/PrivateRoute";
-
+import PrivetLayout from "../layouts/PrivateLayout";
 
 const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <SharedLayout/>,
-        errorElement: <ErrorPage/>,
-        children: [
-            {
-                path: '/',
-                element: <Home/>,
-                loader: () => fetch('https://a-10-chef-recipe-server.vercel.app/chefs')
-            },
-            {
-                path: 'login',
-                element: <Login/>
-            },
-            {
-                path: 'register',
-                element: <Register/>
-            },
-            {
-                path: 'blog',
-                element: <Blog/>
-            },
-            {
-                path: 'chef-recipes/:id',
-                element: <PrivateRoute><ChefRecipes/></PrivateRoute>,
-                loader: ({params}) => fetch(`https://a-10-chef-recipe-server.vercel.app/single-chef/${params.id}`)
-            }
-        ]
-    }
-])
+  {
+    path: "/",
+    element: <SharedLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+        loader: () => fetch("https://a-10-chef-recipe-server.vercel.app/chefs"),
+      },
+      {
+        path: "login",
+        element: <Login />,
+      },
+      {
+        path: "register",
+        element: <Register />,
+      },
+      {
+        path: "blog",
+        element: <Blog />,
+      },
+      {
+        path: "chef-recipes/:id",
+        element: (
+          <PrivetLayout>
+            <ChefRecipes />
+          </PrivetLayout>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://a-10-chef-recipe-server.vercel.app/single-chef/${params.id}`
+          ),
+      },
+    ],
+  },
+]);
 export default router;
