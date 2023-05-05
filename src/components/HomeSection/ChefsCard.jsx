@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
-import { FaThumbsUp } from "react-icons/fa";
+import { FaThumbsUp, FaUtensils } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 
 //Import Lazy Load
 import LazyLoad from "react-lazy-load";
 
-const ChefsCard = ({chef}) => {
+const ChefsCard = ({ chef }) => {
   const [like, setLike] = useState(false);
   const { id, picture, name, likes, recipes, experience } = chef;
   // like added toast
@@ -15,11 +15,6 @@ const ChefsCard = ({chef}) => {
 
   // like remove toast
   const likeRemove = () => toast.warn("like Removed");
-  // handle favorite button
-  const handleFavBtn = () => {
-    setFavBtn(true);
-    favoriteToast();
-  };
 
   //handle like
   const handleLike = () => {
@@ -53,10 +48,15 @@ const ChefsCard = ({chef}) => {
             <FaThumbsUp className="mr-1" /> {like ? likes + 1 : likes}
           </button>
           <div className="badge badge-outline">Recipes: {recipes}</div>
-          <div className="badge badge-outline">Experience: {experience}</div>
+          <div className="badge badge-outline">
+            {experience} Years Experience
+          </div>
         </div>
-        <Link to={`/chef-recipes/${id}`} className="btn btn-accent btn-sm mt-3">
-          view recipe
+        <Link
+          to={`/chef-recipes/${id}`}
+          className="btn text-white btn-accent btn-sm mt-3"
+        >
+          view recipe <FaUtensils className="ml-2" />
         </Link>
       </div>
       <ToastContainer />
