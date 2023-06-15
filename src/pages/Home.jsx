@@ -7,6 +7,7 @@ import Banner from "../components/homeSection/Banner";
 import Chefs from "../components/HomeSection/chefs";
 import WhyBest from "../components/HomeSection/WhyBest";
 import Testimonial from "../components/HomeSection/Testimonial";
+import LazyLoad from "react-lazy-load";
 
 const Home = () => {
   const chefs = useLoaderData();

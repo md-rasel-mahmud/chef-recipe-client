@@ -1,4 +1,4 @@
-# Assignment-10 | Satisfaction Recipe
+# Satisfaction Recipe
 
 ### Live Link: https://assignment-10-chef-recipe.web.app/
 

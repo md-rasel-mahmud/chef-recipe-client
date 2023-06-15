@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 //import lazy load
 import LazyLoad from "react-lazy-load";
@@ -12,10 +12,19 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination } from "swiper";
+import Spinner from "../Spinner";
 
-const Testimonial = ({chefs}) => {
+const Testimonial = ({ chefs }) => {
+  const [spinner, setSpinner] = useState(true);
+
+  // stop spinner
+  useEffect(() => {
+    setSpinner(false);
+  }, [chefs]);
   return (
     <>
+      {/* spinner  */}
+      {spinner && <Spinner />}
       <h2 className="text-center mt-24 text-3xl text-primary underline underline-offset-8">
         Testimonial
       </h2>
