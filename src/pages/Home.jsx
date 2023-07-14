@@ -35,7 +35,7 @@ const Home = () => {
         <div className="divider max-w-screen-lg mx-auto"></div>
 
         {/* About section  */}
-        <About/>
+        <About />
 
         {/* Chefs section  */}
         <Chefs chefs={chefs} />
@@ -43,7 +43,7 @@ const Home = () => {
         <div className="divider max-w-screen-lg mx-auto"></div>
 
         {/* Services section  */}
-        <Services/>
+        <Services />
 
         <div className="divider"></div>
 
@@ -54,6 +54,8 @@ const Home = () => {
 
         {/* Brands  */}
         <OurPartners></OurPartners>
+
+        <div className="divider max-w-screen-lg mx-auto"></div>
 
         {/* Testimonial section  */}
         <Testimonial chefs={chefs} />

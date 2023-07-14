@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 
+*{
+  scroll-behavior: smooth;
+}
 
 /* Lazy load animation*/
 .LazyLoad {

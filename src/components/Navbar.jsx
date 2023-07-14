@@ -8,6 +8,35 @@ const Navbar = () => {
   // import user context
   const { user, logoutUser } = useContext(AuthContext);
 
+  const navigation = (
+    <>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "text-accent font-semibold underline underline-offset-8"
+              : ""
+          }
+          to="/"
+        >
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "text-accent font-semibold underline underline-offset-8"
+              : ""
+          }
+          to="/blog"
+        >
+          Blog
+        </NavLink>
+      </li>
+    </>
+  );
+
   return (
     <div className="navbar sticky top-0 z-50 bg-base-100 shadow-md mb-5">
       <div className="navbar-start">
@@ -19,30 +48,7 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-accent font-semibold underline underline-offset-8"
-                    : ""
-                }
-                to="/"
-              >
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-accent font-semibold underline underline-offset-8"
-                    : ""
-                }
-                to="/blog"
-              >
-                Blog
-              </NavLink>
-            </li>
+            {navigation}
           </ul>
         </div>
         <a className="text-primary lg:uppercase lg:text-xl">
@@ -50,32 +56,7 @@ const Navbar = () => {
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <NavLink
-              className={({ isActive }) =>
-                isActive
-                  ? "text-accent font-semibold underline underline-offset-8"
-                  : ""
-              }
-              to="/"
-            >
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className={({ isActive }) =>
-                isActive
-                  ? "text-accent font-semibold underline underline-offset-8"
-                  : ""
-              }
-              to="/blog"
-            >
-              Blog
-            </NavLink>
-          </li>
-        </ul>
+        <ul className="menu menu-horizontal px-1">{navigation}</ul>
       </div>
       <div className="navbar-end">
         {user ? (
