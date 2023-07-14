@@ -46,7 +46,7 @@ const Navbar = () => {
           </ul>
         </div>
         <a className="text-primary lg:uppercase lg:text-xl">
-          Satisfaction Recipe
+          Satisfaction Chef Recipes
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">

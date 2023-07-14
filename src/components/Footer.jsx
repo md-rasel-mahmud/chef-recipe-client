@@ -62,7 +62,7 @@ const Footer = () => {
             target="_blank"
             className="text-accent uppercase"
           >
-            Satisfaction Recipe
+            Satisfaction Chef Recipes
           </a>
         </p>
       </div>
