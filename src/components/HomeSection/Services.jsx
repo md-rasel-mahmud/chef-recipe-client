@@ -7,7 +7,7 @@ const Services = () => {
       <h2 className="text-center text-3xl text-primary underline underline-offset-8">
         Our Services
       </h2>
-      <div className="grid grid-cols-3 min-h-[80vh] items-center gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 min-h-[80vh] items-center gap-5 my-5">
         <div className="card max-h-80 bg-base-200 shadow-lg">
           <figure className="px-10 pt-10">
             <AiOutlineSearch className="text-8xl" />
