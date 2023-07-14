@@ -9,6 +9,7 @@ import WhyBest from "../components/HomeSection/WhyBest";
 import Testimonial from "../components/HomeSection/Testimonial";
 import LazyLoad from "react-lazy-load";
 import Services from "../components/HomeSection/Services";
+import About from "../components/HomeSection/About";
 
 const Home = () => {
   const chefs = useLoaderData();
@@ -31,6 +32,9 @@ const Home = () => {
       {/* Main section  */}
       <main>
         <div className="divider max-w-screen-lg mx-auto"></div>
+
+        {/* About section  */}
+        <About/>
 
         {/* Chefs section  */}
         <Chefs chefs={chefs} />

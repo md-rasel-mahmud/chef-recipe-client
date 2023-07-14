@@ -1,6 +1,5 @@
-import { FaClipboardList, FaHome, FaUsers, FaUtensils } from "react-icons/fa";
+import { FaClipboardList,  FaUsers } from "react-icons/fa";
 import { AiOutlineSearch } from "react-icons/ai";
-import { Link } from "react-router-dom";
 
 const Services = () => {
   return (
