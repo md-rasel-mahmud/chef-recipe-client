@@ -10,6 +10,7 @@ import Testimonial from "../components/HomeSection/Testimonial";
 import LazyLoad from "react-lazy-load";
 import Services from "../components/HomeSection/Services";
 import About from "../components/HomeSection/About";
+import OurPartners from "../components/HomeSection/OurPartnars";
 
 const Home = () => {
   const chefs = useLoaderData();
@@ -50,6 +51,9 @@ const Home = () => {
         <WhyBest />
 
         <div className="divider max-w-screen-lg mx-auto"></div>
+
+        {/* Brands  */}
+        <OurPartners></OurPartners>
 
         {/* Testimonial section  */}
         <Testimonial chefs={chefs} />
