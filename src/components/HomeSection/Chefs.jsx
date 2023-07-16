@@ -1,7 +1,7 @@
 import React from "react";
 import ChefsCard from "./ChefsCard";
 
-const Chefs = ({ chefs }) => {
+const Chefs = ({chefs}) => {
   
   return (
     <>

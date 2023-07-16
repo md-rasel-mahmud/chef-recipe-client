@@ -17,7 +17,6 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("https://a-10-chef-recipe-server.vercel.app/chefs"),
       },
       {
         path: "login",

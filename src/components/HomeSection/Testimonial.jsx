@@ -14,12 +14,12 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import Spinner from "../Spinner";
 
-const Testimonial = ({ chefs }) => {
+const Testimonial = ({chefs}) => {
   const [spinner, setSpinner] = useState(true);
 
   // stop spinner
   useEffect(() => {
-    setSpinner(false);
+    chefs.length > 0 ? setSpinner(false) : setSpinner(true);
   }, [chefs]);
   return (
     <>

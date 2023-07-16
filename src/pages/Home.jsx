@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
 
 import Spinner from "../components/Spinner";
 
 import Banner from "../components/homeSection/Banner";
-import Chefs from "../components/HomeSection/chefs";
 import WhyBest from "../components/HomeSection/WhyBest";
 import Testimonial from "../components/HomeSection/Testimonial";
-import LazyLoad from "react-lazy-load";
 import Services from "../components/HomeSection/Services";
 import About from "../components/HomeSection/About";
 import OurPartners from "../components/HomeSection/OurPartnars";
+import useChefs from "../hooks/useChefs";
+import Chefs from "../components/HomeSection/Chefs";
+import ChefsOfTheDay from "../components/HomeSection/ChefsOfTheDay";
 
 const Home = () => {
-  const chefs = useLoaderData();
+  const [chefs] = useChefs();
 
   const [spinner, setSpinner] = useState(true);
 
@@ -21,6 +21,8 @@ const Home = () => {
   useEffect(() => {
     setSpinner(false);
   }, [chefs]);
+
+  console.log(chefs);
 
   return (
     <>
@@ -37,11 +39,15 @@ const Home = () => {
         {/* About section  */}
         <About />
 
+        
         {/* Chefs section  */}
         <Chefs chefs={chefs} />
 
         <div className="divider max-w-screen-lg mx-auto"></div>
 
+        {/* Recipe of the day  */}
+        <ChefsOfTheDay chefs={chefs} />
+        
         {/* Services section  */}
         <Services />
 
