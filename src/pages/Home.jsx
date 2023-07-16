@@ -49,6 +49,8 @@ const Home = () => {
 
         {/* Recipe of the day  */}
         <ChefsOfTheDay chefs={chefs} />
+
+        <div className="divider"></div>
         
         {/* Services section  */}
         <Services />
