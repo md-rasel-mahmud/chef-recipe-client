@@ -5,6 +5,7 @@
 
 *{
   scroll-behavior: smooth;
+  transition: all .5s ease;
 }
 
 /* Lazy load animation*/

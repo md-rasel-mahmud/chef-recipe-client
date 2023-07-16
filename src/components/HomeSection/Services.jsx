@@ -4,7 +4,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 const Services = () => {
   return (
     <div className="max-w-screen-lg mx-auto">
-      <h2 className="text-center text-3xl text-primary underline underline-offset-8">
+      <h2 className="text-center mt-8 text-3xl text-primary underline underline-offset-8">
         Our Services
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 min-h-[80vh] items-center gap-5 my-5">

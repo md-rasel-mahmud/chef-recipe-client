@@ -9,7 +9,7 @@ const ChefsOfTheDay = ({ chefs }) => {
     <section className="py-16 bg-base-200 max-w-screen-lg mx-auto rounded-lg p-5">
       <div className="container mx-auto">
         <div className="text-center">
-          <h2 className="text-3xl font-bold mb-6">Chefs of the Day</h2>
+          <h2 className="text-center text-3xl text-accent underline underline-offset-8 mt-8">Chefs of the Day</h2>
         </div>
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {chefs.slice(randomId, randomId + 2).map((chef) => (

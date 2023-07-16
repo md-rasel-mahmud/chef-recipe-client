@@ -13,9 +13,9 @@ const WhyBest = () => {
         }}
         className="min-h-screen my-10"
       >
-        <div className="min-h-screen flex items-center bg-gradient-to-b to-indigo-500/75 from-black/75 p-4 backdrop-blur-sm mx-auto">
+        <div className="min-h-screen flex items-center bg-gradient-to-b to-indigo-500/80 from-black/80 p-4 backdrop-blur-sm mx-auto">
           <div className="max-w-screen-lg mx-auto">
-            <h2 className="text-center text-3xl my-5 text-primary  underline underline-offset-8">
+            <h2 className="text-center text-3xl my-5 text-accent  underline underline-offset-8">
               Why our chef is best?
             </h2>
             <p className="drop-shadow-sm">

@@ -11,6 +11,8 @@ import OurPartners from "../components/HomeSection/OurPartnars";
 import useChefs from "../hooks/useChefs";
 import Chefs from "../components/HomeSection/Chefs";
 import ChefsOfTheDay from "../components/HomeSection/ChefsOfTheDay";
+import RecipeTips from "../components/HomeSection/RecipeTips";
+import Faq from "../components/HomeSection/Faq";
 
 const Home = () => {
   const [chefs] = useChefs();
@@ -19,7 +21,7 @@ const Home = () => {
 
   // stop spinner
   useEffect(() => {
-    setSpinner(false);
+    chefs.length > 0 && setSpinner(false);
   }, [chefs]);
 
   console.log(chefs);
@@ -53,6 +55,7 @@ const Home = () => {
 
         <div className="divider"></div>
 
+
         {/* why our chef is best section  */}
         <WhyBest />
 
@@ -63,8 +66,14 @@ const Home = () => {
 
         <div className="divider max-w-screen-lg mx-auto"></div>
 
+        {/* Recipe tips  */}
+        <RecipeTips/>
+
         {/* Testimonial section  */}
         <Testimonial chefs={chefs} />
+
+        {/* Faq section  */}
+        <Faq/>
       </main>
     </>
   );

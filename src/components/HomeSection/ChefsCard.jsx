@@ -26,11 +26,11 @@ const ChefsCard = ({ chef }) => {
     }
   };
   return (
-    <div className="card bg-base-300 h-96 shadow-xl">
-      <figure>
+    <div className="card bg-base-300 h-96 hover:shadow-none shadow-xl group">
+      <figure className=" overflow-hidden">
         <LazyLoad>
           <img
-            className="rounded-xl object-none object-top"
+            className="rounded-xl object-none object-top group-hover:scale-125"
             src={picture}
             alt="chef image"
           />
